@@ -1,0 +1,6 @@
+[package]
+name = "nesr"
+version = "0.1.0"
+authors = ["Nathan Walker <earthworn@gmail.com>"]
+
+[dependencies]
