@@ -33,6 +33,18 @@ impl Cpu {
                 self.cycles += 2;
                 self.status &= !0b00000001;
             }
+            Instruction::CLD => {
+                self.cycles += 2;
+                self.status &= !0b00001000;
+            }
+            Instruction::CLI => {
+                self.cycles += 2;
+                self.status &= !0b00000100;
+            }
+            Instruction::CLV => {
+                self.cycles += 2;
+                self.status &= !0b01000000;
+            }
             Instruction::DEX => {
                 self.x = self.x.wrapping_sub(1);
                 self.cycles += 2;

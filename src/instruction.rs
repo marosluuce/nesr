@@ -1,5 +1,8 @@
 pub enum Instruction {
     CLC = 0x18,
+    CLD = 0xD8,
+    CLI = 0x58,
+    CLV = 0xB8,
     DEX = 0xCA,
     DEY = 0x88,
     INX = 0xE8,
@@ -17,6 +20,9 @@ pub enum Instruction {
 pub fn to_instruction(string: &'static str) -> Instruction {
     match string {
         "clc" => Instruction::CLC,
+        "cld" => Instruction::CLD,
+        "cli" => Instruction::CLI,
+        "clv" => Instruction::CLV,
         "dex" => Instruction::DEX,
         "dey" => Instruction::DEY,
         "inx" => Instruction::INX,
