@@ -72,6 +72,18 @@ impl Cpu {
             Instruction::NOP => {
                 self.cycles += 2;
             }
+            Instruction::SEC => {
+                self.status |= 0b00000001;
+                self.cycles += 2;
+            }
+            Instruction::SED => {
+                self.status |= 0b00001000;
+                self.cycles += 2;
+            }
+            Instruction::SEI => {
+                self.status |= 0b00000100;
+                self.cycles += 2;
+            }
             Instruction::TAX => {
                 self.x = self.accumulator;
                 self.cycles += 2;
