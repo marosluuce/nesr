@@ -5,6 +5,14 @@ pub struct Ram {
 
 impl Ram {
     pub fn new() -> Ram {
-        Ram { memory: Vec::with_capacity(64 * 1024) }
+        Ram { memory: vec![0; 0xFFFF + 1] }
+    }
+
+    pub fn set(&mut self, address: u16, value: u8) {
+        self.memory[address as usize] = value;
+    }
+
+    pub fn read(&mut self, address: u16) -> u8 {
+        self.memory[address as usize]
     }
 }
